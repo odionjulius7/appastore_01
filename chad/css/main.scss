@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 :root {
   --orange: #ff7800;
   --black: #130f40;
@@ -113,12 +114,14 @@ header {
     opacity: 0;
   }
 }
+
 @keyframes fadeUp {
   0% {
     transform: scale(0.5);
     opacity: 0;
   }
 }
+
 .header .search-form {
   position: absolute;
   top: 110%;
@@ -294,6 +297,7 @@ header {
     right: 8rem;
   }
 }
+
 @media (max-wdith: 768px) {
   #menu-btn {
     display: inline-block;
@@ -310,16 +314,19 @@ header {
     border-radius: 0.5rem;
     background: #fff;
   }
+
   .header .navbar.login-form.active {
     right: 2rem;
     transition: 0.4s liear;
   }
+
   .header .navbar a {
     font-size: 2rem;
     margin: 2rem 2.5rem;
     display: block;
   }
 }
+
 @media (max-wdith: 450px) {
   html {
     font-size: 50%;
@@ -328,6 +335,7 @@ header {
     font-size: 5rem;
   }
 }
+
 /* .home {
     display: flex;
     align-items: center;
@@ -348,7 +356,7 @@ header {
     color: var(--black);
     font-size: 3rem;
 }
-
+ 
 .home .content h3 span {
     color: var(--orange);
 }
@@ -359,9 +367,13 @@ header {
     padding: 1rem 0;
     line-height: 1.8rem;
 } */
+
 .home {
   padding: 14rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/deliveryman_12.jpg) no-repeat;
+  // background: url("../images/deliveryman_12.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../images/deliveryman_12.jpg) no-repeat;
+
   background-size: cover;
   background-position: center;
   position: relative;
@@ -369,67 +381,75 @@ header {
   /* width: 100%;
     height: fit-content;  */
   /* object-fit: cover; */
+
+  .slides-container {
+    /* height: 40vh; */
+    height: 50vh;
+    .slide {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+
+      .content {
+        flex: 1 1 40rem;
+        animation: fadeLeft 0.4s linear 0.4s backwards;
+
+        span {
+          color: var(--light-color);
+          font-size: 2.5rem;
+        }
+        h3 {
+          font-size: 6rem;
+          color: var(--black);
+          padding: 0.5rem 0;
+        }
+      }
+
+      .image {
+        flex: 1 1 40rem;
+        margin: 3rem 0;
+
+        img {
+          width: 100%;
+          animation: fadeUp 0.4s linear;
+        }
+      }
+    }
+  }
+  #next-slide,
+  #prev-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    background: var(--light-color);
+    font-size: 3rem;
+    color: var(--black);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--orange);
+      color: var(--light-color);
+    }
+  }
+
+  #prev-slide {
+    left: 2rem;
+    /* box-shadow: var(--box-shadow); */
+  }
+
+  #next-slide {
+    right: 2rem;
+    /* box-shadow: var(--box-shadow); */
+  }
 }
-.home .slides-container {
-  /* height: 40vh; */
-  height: 50vh;
-}
-.home .slides-container .slide {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  display: none;
-}
-.home .slides-container .slide.active {
-  display: flex;
-}
-.home .slides-container .slide .content {
-  flex: 1 1 40rem;
-  animation: fadeLeft 0.4s linear 0.4s backwards;
-}
-.home .slides-container .slide .content span {
-  color: var(--light-color);
-  font-size: 2.5rem;
-}
-.home .slides-container .slide .content h3 {
-  font-size: 6rem;
-  color: var(--black);
-  padding: 0.5rem 0;
-}
-.home .slides-container .slide .image {
-  flex: 1 1 40rem;
-  margin: 3rem 0;
-}
-.home .slides-container .slide .image img {
-  width: 100%;
-  animation: fadeUp 0.4s linear;
-}
-.home #next-slide,
-.home #prev-slide {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 5rem;
-  width: 5rem;
-  line-height: 5rem;
-  box-shadow: var(--box-shadow);
-  text-align: center;
-  background: var(--light-color);
-  font-size: 3rem;
-  color: var(--black);
-  cursor: pointer;
-}
-.home #next-slide:hover,
-.home #prev-slide:hover {
-  background: var(--orange);
-  color: var(--light-color);
-}
-.home #prev-slide {
-  left: 2rem;
-  /* box-shadow: var(--box-shadow); */
-}
-.home #next-slide {
-  right: 2rem;
-  /* box-shadow: var(--box-shadow); */
-}/*# sourceMappingURL=main.css.map */
